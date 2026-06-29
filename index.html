@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#C8102E" />
+  <meta name="description" content="عُمان في الأخبار — منصة ذكية تجمع يومياً الإنجازات العمانية وما يُقال عن سلطنة عُمان في الإعلام العالمي" />
+  <meta name="keywords" content="عمان, أخبار عمان, إنجازات عمانية, سلطنة عمان, Oman news, Oman achievements" />
+  <meta property="og:title" content="عُمان في الأخبار" />
+  <meta property="og:description" content="منصة ذكية تجمع يومياً الإنجازات العمانية وما يُقال عن سلطنة عُمان في الإعلام العالمي" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="عُمان في الأخبار" />
+  <meta property="og:locale" content="ar_OM" />
+  <meta property="og:image" content="assets/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="عُمان في الأخبار — إنجازات عُمانية وأصداء عالمية" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="عُمان في الأخبار" />
+  <meta name="twitter:description" content="منصة ذكية تجمع يومياً الإنجازات العمانية وما يُقال عن سلطنة عُمان في الإعلام العالمي" />
+  <meta name="twitter:image" content="assets/social-preview.png" />
+  <meta name="twitter:image:alt" content="عُمان في الأخبار — إنجازات عُمانية وأصداء عالمية" />
+  <link rel="image_src" href="assets/social-preview.png" />
+
+  <title>عُمان في الأخبار — إنجازات عمانية وأصداء عالمية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Rashi+Hebrew:wght@100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+</head>
+<body>
+  <!-- Liquid Glass SVG filter -->
+  <svg class="liquid-glass-svg" width="0" height="0" aria-hidden="true" focusable="false">
+    <filter id="glass-distortion">
+      <feTurbulence type="turbulence" baseFrequency="0.018 0.035" numOctaves="2" seed="8" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="2" result="blurred" />
+      <feDisplacementMap in="SourceGraphic" in2="blurred" scale="18" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+
+  <!-- ════════════ Navigation ════════════ -->
+  <nav class="nav" id="main-nav">
+    <div class="nav__inner">
+      <div class="nav__brand">
+        <img class="nav__logo" src="assets/logo.jpg" alt="عُمان في الأخبار" />
+        <div class="nav__title"><span>عُمان</span> في الأخبار</div>
+      </div>
+      <div class="nav__actions">
+        <button class="nav__btn" id="theme-toggle" title="تبديل الوضع الداكن/الفاتح" aria-label="تبديل الوضع">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button class="nav__btn" id="settings-btn" title="الإعدادات" aria-label="الإعدادات">
+          ⚙️
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════ Hero Section ════════════ -->
+  <header class="hero">
+    <div class="hero__inner">
+
+      <h1 class="sr-only">إنجازات عُمانية وأصداء عالمية</h1>
+      <div class="hero__title-art" aria-hidden="true">
+        <img src="assets/hero-title-design.png" alt="" class="hero__title-art-img" />
+      </div>
+      <p class="hero__subtitle">
+        منصة ذكية تجمع يومياً أبرز إنجازات أبناء سلطنة عُمان ومؤسساتها، 
+        وترصد ما تقوله وسائل الإعلام العالمية الموثوقة عن عُمان.
+      </p>
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-icon">📰</span>
+          <div class="hero__stat-info">
+            <span class="hero__stat-value" id="stat-total">0</span>
+            <span class="hero__stat-label">خبر اليوم</span>
+          </div>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-icon">🌐</span>
+          <div class="hero__stat-info">
+            <span class="hero__stat-value" id="stat-sources">0</span>
+            <span class="hero__stat-label">مصدر نشط</span>
+          </div>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-icon">🕐</span>
+          <div class="hero__stat-info">
+            <span class="hero__stat-value" id="stat-update">--:--</span>
+            <span class="hero__stat-label">آخر تحديث</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ════════════ Main Content ════════════ -->
+  <main class="main">
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tab-achievements" role="tab" aria-selected="true">
+        إنجازات عُمانية
+        <span class="tab__count" id="tab-achievements-count">0</span>
+      </button>
+      <button class="tab" id="tab-mentions" role="tab" aria-selected="false">
+        قالوا عن عُمان
+        <span class="tab__count" id="tab-mentions-count">0</span>
+      </button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters" role="toolbar" aria-label="تصفية الأخبار">
+      <div class="filter-group">
+        <button class="filter-btn active" data-filter="all" id="filter-all">الكل</button>
+        <button class="filter-btn" data-filter="local" id="filter-local">🇴🇲 مصادر محلية</button>
+        <button class="filter-btn" data-filter="global" id="filter-global">🌍 مصادر عالمية</button>
+      </div>
+      <div class="filter-search">
+        <input 
+          type="search" 
+          class="filter-search__input" 
+          id="search-input"
+          placeholder="ابحث في الأخبار..."
+          aria-label="البحث في الأخبار"
+        />
+        <span class="filter-search__icon">🔍</span>
+      </div>
+      <button class="refresh-btn" id="refresh-btn" title="تحديث الأخبار">
+        <span class="refresh-icon">⚡</span>
+        تحديث
+      </button>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid" id="news-grid" role="feed" aria-label="قائمة الأخبار"></div>
+
+    <!-- Load More -->
+    <div class="load-more-wrap" id="load-more-wrap" style="display: none;">
+      <button class="load-more-btn" id="load-more-btn">عرض المزيد ↓</button>
+    </div>
+
+  </main>
+
+  <!-- ════════════ Settings Modal ════════════ -->
+  <div class="modal-overlay" id="settings-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal__header">
+        <h2 class="modal__title">⚙️ الإعدادات</h2>
+        <button class="modal__close" id="settings-close" aria-label="إغلاق">✕</button>
+      </div>
+      <div class="modal__body">
+        <div class="setting-group">
+          <label class="setting-group__label">ℹ️ حول الموقع</label>
+          <p class="setting-group__desc">
+            يجمع هذا الموقع الأخبار تلقائياً من مصادر RSS مجانية وصفحات أخبار عامة لمصادر عربية موثوقة.
+            يتم تصنيف الأخبار ذكياً إلى إنجازات عمانية وإشارات إعلامية مرتبطة بعُمان.
+          </p>
+        </div>
+        <div class="setting-group">
+          <label class="setting-group__label">🗑️ إدارة البيانات المخزنة</label>
+          <p class="setting-group__desc">يتم تخزين الأخبار مؤقتاً لتسريع التحميل. يمكنك مسح البيانات لتحميل أخبار جديدة.</p>
+          <button class="btn btn--secondary" id="clear-cache-btn" style="width: 100%; margin-top: 8px;">🗑️ مسح البيانات المخزنة</button>
+        </div>
+        <div class="setting-group">
+          <label class="setting-group__label">📡 المصادر النشطة</label>
+          <div class="setting-group__desc" style="line-height: 2.4; display: flex; flex-wrap: wrap; gap: 6px;">
+            <span class="footer__source-tag">Google News 🇴🇲</span>
+            <span class="footer__source-tag">BBC Arabic</span>
+            <span class="footer__source-tag">CNN Arabic</span>
+            <span class="footer__source-tag">Al Arabiya</span>
+            <span class="footer__source-tag">Asharq</span>
+            <span class="footer__source-tag">Aawsat</span>
+            <span class="footer__source-tag">Euronews Arabic</span>
+            <span class="footer__source-tag">Anadolu Arabic</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--primary" id="settings-save-btn">✓ حسناً</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════ Footer ════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__text">
+        🇴🇲 <strong>عُمان في الأخبار</strong> — منصة مفتوحة المصدر تجمع الأخبار تلقائياً من مصادر RSS عامة
+      </p>
+      <div class="footer__sources">
+        <span class="footer__source-tag">Google News</span>
+        <span class="footer__source-tag">BBC Arabic</span>
+        <span class="footer__source-tag">CNN Arabic</span>
+        <span class="footer__source-tag">Al Arabiya</span>
+        <span class="footer__source-tag">Asharq</span>
+        <span class="footer__source-tag">Aawsat</span>
+        <span class="footer__source-tag">Independent Arabia</span>
+        <span class="footer__source-tag">Euronews Arabic</span>
+        <span class="footer__source-tag">Anadolu Arabic</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════ All JavaScript (inline to avoid CORS issues with file://) ════════════ -->
+  <script>
+  // ======================================================
+  // DEMO DATA
+  // ======================================================
+  const DEMO_DATA = {
+    achievements: [
+      {
+        id: 'demo-ach-1',
+        title: 'عُمان تفوز بجائزة أفضل وجهة سياحية مستدامة في الشرق الأوسط لعام 2026',
+        description: 'حصلت سلطنة عُمان على جائزة أفضل وجهة سياحية مستدامة في منطقة الشرق الأوسط، وذلك خلال حفل توزيع جوائز السياحة العالمية المقام في لندن، تقديراً لجهودها في الحفاظ على البيئة وتطوير السياحة البيئية.',
+        source: 'وكالة الأنباء العمانية',
+        sourceIcon: '🇴🇲',
+        date: '2026-06-14',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-2',
+        title: 'مهندسة عمانية تحصل على براءة اختراع في مجال الطاقة المتجددة من جامعة MIT',
+        description: 'حصلت المهندسة العمانية فاطمة الحارثية على براءة اختراع من معهد ماساتشوستس للتكنولوجيا عن ابتكارها في تطوير خلايا شمسية بكفاءة عالية تتحمل درجات الحرارة المرتفعة.',
+        source: 'جريدة عمان',
+        sourceIcon: '📰',
+        date: '2026-06-13',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-3',
+        title: 'المنتخب العماني لكرة القدم يتأهل لنهائيات كأس العالم 2026',
+        description: 'في إنجاز تاريخي غير مسبوق، تمكن المنتخب العماني لكرة القدم من التأهل لنهائيات كأس العالم، محققاً حلم ملايين العمانيين بعد فوزه في المباراة الحاسمة.',
+        source: 'الجزيرة الرياضية',
+        sourceIcon: '⚽',
+        date: '2026-06-12',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-4',
+        title: 'شركة عمانية ناشئة تجمع 50 مليون دولار لتطوير تقنيات الهيدروجين الأخضر',
+        description: 'نجحت شركة "هايدروم" العمانية الناشئة في جمع تمويل بقيمة 50 مليون دولار من مستثمرين دوليين لتطوير تقنيات إنتاج الهيدروجين الأخضر.',
+        source: 'بلومبرغ العربية',
+        sourceIcon: '💰',
+        date: '2026-06-11',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-5',
+        title: 'طالب عماني يحصد المركز الأول في أولمبياد الرياضيات الدولي',
+        description: 'حقق الطالب العماني أحمد البلوشي إنجازاً مميزاً بحصوله على الميدالية الذهبية في أولمبياد الرياضيات الدولي المقام في اليابان، ليكون أول عماني يحقق هذا الإنجاز.',
+        source: 'وزارة التربية والتعليم',
+        sourceIcon: '🏅',
+        date: '2026-06-10',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-6',
+        title: 'عُمان تُطلق أول قمر صناعي محلي الصنع بنجاح',
+        description: 'أطلقت سلطنة عُمان بنجاح أول قمر صناعي مصمم ومصنّع محلياً بالكامل من قبل فريق هندسي عماني، في خطوة تاريخية نحو تعزيز القدرات الفضائية الوطنية.',
+        source: 'وكالة الأنباء العمانية',
+        sourceIcon: '🛰️',
+        date: '2026-06-09',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-7',
+        title: 'الخطوط الجوية العمانية تحصل على تصنيف خمس نجوم من سكاي تراكس',
+        description: 'حصلت الخطوط الجوية العمانية على تصنيف خمس نجوم من مؤسسة سكاي تراكس العالمية، لتنضم إلى نادي شركات الطيران المتميزة عالمياً.',
+        source: 'سكاي نيوز عربية',
+        sourceIcon: '✈️',
+        date: '2026-06-08',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-8',
+        title: 'فنانة عمانية تعرض أعمالها في متحف اللوفر بباريس',
+        description: 'افتتحت الفنانة التشكيلية العمانية منى الرئيسية معرضها الفني "أصداء الصحراء" في متحف اللوفر بباريس، لتكون أول فنانة عمانية تحظى بهذا الشرف.',
+        source: 'فرانس 24 عربي',
+        sourceIcon: '🎨',
+        date: '2026-06-07',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-9',
+        title: 'ميناء صلالة يُصنّف ضمن أسرع 10 موانئ نمواً في العالم',
+        description: 'حقق ميناء صلالة قفزة نوعية بتصنيفه ضمن أسرع عشرة موانئ نمواً على مستوى العالم وفقاً لتقرير منظمة التجارة العالمية.',
+        source: 'رويترز',
+        sourceIcon: '🚢',
+        date: '2026-06-06',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=400&fit=crop',
+        category: 'achievement'
+      },
+      {
+        id: 'demo-ach-10',
+        title: 'جامعة السلطان قابوس تحتل المرتبة الأولى عربياً في أبحاث تحلية المياه',
+        description: 'صنّف مؤشر نيتشر العلمي جامعة السلطان قابوس في المرتبة الأولى عربياً في مجال أبحاث تحلية المياه والتقنيات المستدامة.',
+        source: 'مجلة نيتشر',
+        sourceIcon: '🔬',
+        date: '2026-06-05',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop',
+        category: 'achievement'
+      }
+    ],
+    mentions: [
+      {
+        id: 'demo-men-1',
+        title: 'Reuters: Oman emerges as key mediator in Middle East diplomatic talks',
+        description: 'Reuters reports that Oman has played a crucial behind-the-scenes role in brokering recent diplomatic agreements in the Middle East, leveraging its longstanding reputation as a neutral mediator.',
+        source: 'Reuters',
+        sourceIcon: '🔵',
+        date: '2026-06-14',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1529243856184-fd5465488984?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-2',
+        title: 'BBC: عُمان تتصدر قائمة الدول الأكثر أماناً في العالم العربي',
+        description: 'في تقرير خاص نشرته هيئة الإذاعة البريطانية، صنّفت عُمان كأكثر دولة أماناً في العالم العربي وضمن أفضل 20 دولة عالمياً.',
+        source: 'BBC Arabic',
+        sourceIcon: '🟣',
+        date: '2026-06-13',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-3',
+        title: 'Bloomberg: Oman\'s green hydrogen strategy attracts $30 billion in foreign investment',
+        description: 'Bloomberg highlights Oman\'s ambitious green hydrogen strategy, noting that the Sultanate has attracted over $30 billion in foreign investment commitments.',
+        source: 'Bloomberg',
+        sourceIcon: '🟡',
+        date: '2026-06-12',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-4',
+        title: 'الجزيرة: مسقط تستضيف مؤتمراً دولياً حول التنوع البيولوجي في المحيط الهندي',
+        description: 'أشارت قناة الجزيرة إلى استضافة سلطنة عُمان لمؤتمر دولي كبير حول حماية التنوع البيولوجي في المحيط الهندي، بمشاركة أكثر من 60 دولة.',
+        source: 'Al Jazeera',
+        sourceIcon: '🟠',
+        date: '2026-06-11',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-5',
+        title: 'The Guardian: Oman\'s ancient falaj irrigation system inspires modern water conservation',
+        description: 'The Guardian published a feature article exploring how Oman\'s UNESCO-listed falaj irrigation system, dating back over 2,500 years, is inspiring modern water conservation technologies.',
+        source: 'The Guardian',
+        sourceIcon: '🔴',
+        date: '2026-06-10',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-6',
+        title: 'CNN: مسقط ضمن أجمل 10 مدن ساحلية في العالم لعام 2026',
+        description: 'اختارت شبكة CNN مدينة مسقط ضمن قائمتها لأجمل عشر مدن ساحلية في العالم، مشيرة إلى مزيجها الفريد بين العمارة التقليدية والحداثة.',
+        source: 'CNN',
+        sourceIcon: '🔴',
+        date: '2026-06-09',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-7',
+        title: 'France24: Le sultanat d\'Oman renforce son rôle dans la diplomatie énergétique mondiale',
+        description: 'France 24 reports on Oman\'s growing role in global energy diplomacy, highlighting the Sultanate\'s strategic position between OPEC and renewable energy advocates.',
+        source: 'France 24',
+        sourceIcon: '🇫🇷',
+        date: '2026-06-08',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-8',
+        title: 'DW: عُمان تطلق أكبر مشروع للطاقة الشمسية في شبه الجزيرة العربية',
+        description: 'سلّطت قناة DW الألمانية الضوء على إطلاق سلطنة عُمان لأكبر مشروع للطاقة الشمسية في شبه الجزيرة العربية بقدرة 1.5 غيغاواط.',
+        source: 'DW عربية',
+        sourceIcon: '🇩🇪',
+        date: '2026-06-07',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-9',
+        title: 'Al Arabiya: Oman\'s tourism sector records 40% growth in first half of 2026',
+        description: 'Al Arabiya English reports that Oman\'s tourism sector has witnessed a remarkable 40% increase in visitor arrivals during the first half of 2026.',
+        source: 'Al Arabiya',
+        sourceIcon: '🟤',
+        date: '2026-06-06',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600&h=400&fit=crop',
+        category: 'mention'
+      },
+      {
+        id: 'demo-men-10',
+        title: 'Financial Times: Oman\'s economic diversification strategy shows promising results',
+        description: 'The Financial Times analysis shows that Oman\'s Vision 2040 economic diversification plan is yielding significant results, with non-oil GDP growth reaching 8.2%.',
+        source: 'Financial Times',
+        sourceIcon: '📊',
+        date: '2026-06-05',
+        url: '#',
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
+        category: 'mention'
+      }
+    ]
+  };
+
+  // ======================================================
+  // CACHE
+  // ======================================================
+  const CACHE_PREFIX = 'oman_news_v10_';
+  const OmanCache = {
+    get(key) {
+      try {
+        const raw = localStorage.getItem(CACHE_PREFIX + key);
+        if (!raw) return null;
+        const { data, expiry } = JSON.parse(raw);
+        if (Date.now() > expiry) { this.remove(key); return null; }
+        return data;
+      } catch { return null; }
+    },
+    set(key, data, ttl = 3600000) {
+      try {
+        localStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ data, expiry: Date.now() + ttl, timestamp: Date.now() }));
+      } catch { this.cleanup(); }
+    },
+    remove(key) { localStorage.removeItem(CACHE_PREFIX + key); },
+    cleanup() {
+      Object.keys(localStorage).filter(k => k.startsWith(CACHE_PREFIX)).forEach(k => {
+        try { const { expiry } = JSON.parse(localStorage.getItem(k)); if (Date.now() > expiry) localStorage.removeItem(k); }
+        catch { localStorage.removeItem(k); }
+      });
+    },
+    clearAll() { Object.keys(localStorage).filter(k => k.startsWith(CACHE_PREFIX)).forEach(k => localStorage.removeItem(k)); },
+    setLastUpdate() { localStorage.setItem(CACHE_PREFIX + 'last_update', Date.now().toString()); }
+  };
+
+  // ======================================================
+  // AI CLASSIFIER
+  // ======================================================
+  const ACHIEVEMENT_KW_HIGH_AR = ['إنجاز','فوز','فازت','فاز','يفوز','حقق','حققت','يحقق','جائزة','جوائز','ابتكار','اختراع','براءة اختراع','ميدالية','ذهبية','بطولة','رقم قياسي','تأهل','أول عماني','أول عمانية','تكريم','تميز','تفوق','منحة دراسية','اكتشاف','ريادة'];
+  const ACHIEVEMENT_KW_MED_AR = ['نجاح','تصنيف','مرتبة','المركز الأول','الأفضل','تطوير','تقدم','ارتقاء','افتتاح','إطلاق','أطلقت','تدشين','اعتماد','شراكة','استثمار','مشروع رائد','مبادرة','اعتراف دولي','تصدر','صدارة'];
+  const ACHIEVEMENT_KW_HIGH_EN = ['achievement','award','wins','won','winner','innovation','first omani','record','medal','champion','championship','breakthrough','patent','discovery','pioneer','excellence'];
+  const ACHIEVEMENT_KW_MED_EN = ['success','ranked','top','leading','milestone','launch','partnership','investment','initiative','recognized','honored'];
+  const GLOBAL_SOURCES = ['reuters','al jazeera','الجزيرة','bbc','cnn','cnn arabic','cnn بالعربية','the guardian','guardian','bloomberg','بلومبرغ','فرانس 24','france 24','فرانس24','dw','financial times','al arabiya','العربية','associated press','sky news','سكاي نيوز','cnbc','forbes','independent','إندبندنت','asharq','الشرق','aawsat','الشرق الأوسط','euronews','يورونيوز','anadolu','الأناضول'];
+  const OMAN_KW = ['عمان','عُمان','سلطنة عمان','عماني','عمانية','مسقط','صلالة','صحار','نزوى','الدقم','ظفار','مسندم','البريمي','شمال الباطنة','جنوب الباطنة','جنوب الشرقية','شمال الشرقية','محافظة مسقط','جلالة السلطان','السلطان هيثم','السيد أسعد','oman','omani','muscat','salalah','sultanate of oman'];
+
+  function classifyArticle(article) {
+    const text = ((article.title || '') + ' ' + (article.description || '')).toLowerCase();
+    const source = (article.source || '').toLowerCase();
+    const isOman = OMAN_KW.some(kw => text.includes(kw.toLowerCase()));
+    if (!isOman) return { category: 'irrelevant', confidence: 0 };
+
+    let score = 0;
+    ACHIEVEMENT_KW_HIGH_AR.forEach(kw => { if (text.includes(kw)) score += 3; });
+    ACHIEVEMENT_KW_MED_AR.forEach(kw => { if (text.includes(kw)) score += 2; });
+    ACHIEVEMENT_KW_HIGH_EN.forEach(kw => { if (text.includes(kw)) score += 3; });
+    ACHIEVEMENT_KW_MED_EN.forEach(kw => { if (text.includes(kw)) score += 2; });
+
+    const isGlobal = GLOBAL_SOURCES.some(s => source.includes(s));
+
+    if (score >= 5) return { category: 'achievement', confidence: Math.min(score / 10, 1) };
+    if (isGlobal) return { category: 'mention', confidence: 0.8 };
+    if (score >= 2) return { category: 'achievement', confidence: score / 8 };
+    return { category: 'irrelevant', confidence: 0.2 };
+  }
+
+  function classifyBatch(articles) {
+    const achievements = [], mentions = [];
+    articles.forEach(a => {
+      const r = classifyArticle(a);
+      if (r.category === 'achievement') achievements.push({ ...a, classification: r });
+      else if (r.category === 'mention') mentions.push({ ...a, classification: r });
+    });
+    return { achievements, mentions };
+  }
+
+  function isOmanRelated(text) {
+    const lower = text.toLowerCase();
+    return OMAN_KW.some(kw => lower.includes(kw.toLowerCase()));
+  }
+
+  // ======================================================
+  // NEWS ENGINE
+  // ======================================================
+  const RSS_FEEDS = {
+    ona_ar: { name: 'وكالة الأنباء العمانية', url: 'https://omannews.gov.om/rss.ona', lang: 'ar', type: 'oman', format: 'xml' },
+    shabiba_ar: { name: 'الشبيبة', url: 'https://shabiba.com/', lang: 'ar', type: 'oman', format: 'html' },
+    bing_achievements_ar: { name: 'Bing News إنجازات عمانية', url: 'https://www.bing.com/news/search?q=%D8%B9%D9%85%D8%A7%D9%86+%D8%A5%D9%86%D8%AC%D8%A7%D8%B2+OR+%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9+OR+%D8%AD%D9%82%D9%82+OR+%D9%81%D8%A7%D8%B2&format=rss&cc=om&setlang=ar', lang: 'ar', type: 'oman', format: 'xml' },
+    bing_mentions_ar: { name: 'Bing News مصادر عربية عالمية', url: 'https://www.bing.com/news/search?q=%D8%B9%D9%85%D8%A7%D9%86+(site%3Aaljazeera.net+OR+site%3Abbc.com%2Farabic+OR+site%3Aarabic.cnn.com+OR+site%3Aalarabiya.net+OR+site%3Afrance24.com%2Far+OR+site%3Adw.com%2Far+OR+site%3Askynewsarabia.com+OR+site%3Aaawsat.com+OR+site%3Aasharq.com+OR+site%3Aindependentarabia.com+OR+site%3Aeuronews.com%2Far+OR+site%3Aaa.com.tr%2Far)&format=rss&cc=ae&setlang=ar', lang: 'ar', type: 'global', format: 'xml' },
+    google_oman_ar: { name: 'Google News عُمان', url: 'https://news.google.com/rss/search?q=%D8%B9%D9%85%D8%A7%D9%86+OR+%22%D8%B3%D9%84%D8%B7%D9%86%D8%A9+%D8%B9%D9%85%D8%A7%D9%86%22+when%3A14d&hl=ar&gl=OM&ceid=OM%3Aar', lang: 'ar', type: 'global', format: 'xml' },
+    google_achievements_ar: { name: 'Google News إنجازات عمانية', url: 'https://news.google.com/rss/search?q=(%D8%B9%D9%85%D8%A7%D9%86+OR+%22%D8%B3%D9%84%D8%B7%D9%86%D8%A9+%D8%B9%D9%85%D8%A7%D9%86%22)+(%D8%A5%D9%86%D8%AC%D8%A7%D8%B2+OR+%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9+OR+%D9%81%D8%A7%D8%B2+OR+%D8%AD%D9%82%D9%82+OR+%D8%AA%D8%B5%D8%AF%D8%B1)+when%3A30d&hl=ar&gl=OM&ceid=OM%3Aar', lang: 'ar', type: 'oman', format: 'xml' },
+    google_global_ar: { name: 'Google News مصادر عربية موثوقة', url: 'https://news.google.com/rss/search?q=(%D8%B9%D9%85%D8%A7%D9%86+OR+%22%D8%B3%D9%84%D8%B7%D9%86%D8%A9+%D8%B9%D9%85%D8%A7%D9%86%22)+(site%3Aaljazeera.net+OR+site%3Abbc.com%2Farabic+OR+site%3Aarabic.cnn.com+OR+site%3Aalarabiya.net+OR+site%3Aaawsat.com+OR+site%3Aasharq.com+OR+site%3Aindependentarabia.com+OR+site%3Aeuronews.com%2Far+OR+site%3Aaa.com.tr%2Far)+when%3A30d&hl=ar&gl=OM&ceid=OM%3Aar', lang: 'ar', type: 'global', format: 'xml' },
+    aljazeera_ar: { name: 'الجزيرة', url: 'https://www.aljazeera.net/aljazeerarss/ar.xml', lang: 'ar', type: 'global', format: 'xml' },
+    bbc_arabic: { name: 'BBC عربي', url: 'https://feeds.bbci.co.uk/arabic/rss.xml', lang: 'ar', type: 'global', format: 'xml' },
+    france24_ar: { name: 'فرانس24 عربي', url: 'https://www.france24.com/ar/rss', lang: 'ar', type: 'global', format: 'xml' },
+    dw_ar: { name: 'DW عربية', url: 'https://rss.dw.com/xml/rss-ar-all', lang: 'ar', type: 'global', format: 'xml' },
+    skynews_ar: { name: 'سكاي نيوز عربية', url: 'https://www.skynewsarabia.com/rss', lang: 'ar', type: 'global', format: 'xml' },
+    omandaily_ar: { name: 'جريدة عمان', url: 'https://www.omandaily.om/', lang: 'ar', type: 'oman', format: 'html' },
+    alroya_ar: { name: 'الرؤية العمانية', url: 'https://alroya.om/', lang: 'ar', type: 'oman', format: 'html' }
+  };
+
+  const CORS_PROXIES = [
+    url => url,
+    url => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url),
+    url => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url)
+  ];
+  const READER_PROXY = url => 'https://r.jina.ai/http://' + url;
+  const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
+  const ARTICLE_IMAGE_PROXY = 'https://api.allorigins.win/raw?url=';
+
+  function extractImageFromItem(item, baseUrl) {
+    const htmlFields = [item.content, item.description, item['content:encoded'], item.summary];
+    for (const html of htmlFields) {
+      const image = extractImageFromHtml(html, baseUrl);
+      if (image) return image;
+    }
+
+    const mediaCandidates = [
+      getMediaValue(item.image),
+      getMediaValue(item.thumbnail),
+      getMediaValue(item.enclosure),
+      getMediaValue(item['media:content']),
+      getMediaValue(item['media:thumbnail'])
+    ];
+
+    for (const candidate of mediaCandidates) {
+      const image = normalizeImageUrl(candidate, baseUrl);
+      if (image) return image;
+    }
+
+    for (const html of htmlFields) {
+      const match = String(html || '').match(/https?:\/\/[^\s"'<>]+\.(?:jpg|jpeg|png|webp|gif|avif)(?:[^\s"'<>]*)?/i);
+      const image = normalizeImageUrl(match && match[0], baseUrl);
+      if (image) return image;
+    }
+
+    return null;
+  }
+
+  async function fetchArticleImage(articleUrl) {
+    if (!/^https?:\/\//i.test(articleUrl || '')) return null;
+
+    const cacheKey = 'article_image_' + articleUrl;
+    const cached = OmanCache.get(cacheKey);
+    if (cached !== null) return cached || null;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    try {
+      const response = await fetch(ARTICLE_IMAGE_PROXY + encodeURIComponent(articleUrl), {
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+
+      const html = await response.text();
+      const image = extractImageFromHtml(html, articleUrl);
+      OmanCache.set(cacheKey, image || '', image ? 21600000 : 1800000);
+      return image;
+    } catch {
+      OmanCache.set(cacheKey, '', 1800000);
+      return null;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  function extractImageFromHtml(html, baseUrl) {
+    if (!html) return null;
+
+    const doc = new DOMParser().parseFromString(String(html), 'text/html');
+    const metaSelectors = [
+      'meta[property="og:image:secure_url"]',
+      'meta[property="og:image:url"]',
+      'meta[property="og:image"]',
+      'meta[name="twitter:image"]',
+      'meta[name="twitter:image:src"]',
+      'meta[name="thumbnail"]',
+      'link[rel="image_src"]'
+    ];
+
+    for (const selector of metaSelectors) {
+      const element = doc.querySelector(selector);
+      const image = normalizeImageUrl(element && (element.getAttribute('content') || element.getAttribute('href')), baseUrl);
+      if (image) return image;
+    }
+
+    const imageSelectors = [
+      'article picture source[srcset]',
+      'article img',
+      'main picture source[srcset]',
+      'main img',
+      'figure picture source[srcset]',
+      'figure img',
+      'img'
+    ];
+
+    for (const selector of imageSelectors) {
+      const elements = Array.from(doc.querySelectorAll(selector));
+      for (const element of elements) {
+        if (isTinyImageElement(element)) continue;
+        const image = normalizeImageUrl(
+          pickFromSrcset(element.getAttribute('srcset') || element.getAttribute('data-srcset')) ||
+          element.getAttribute('data-src') ||
+          element.getAttribute('data-original') ||
+          element.getAttribute('data-lazy-src') ||
+          element.getAttribute('src'),
+          baseUrl
+        );
+        if (image) return image;
+      }
+    }
+
+    return null;
+  }
+
+  function getMediaValue(value) {
+    if (!value) return null;
+    if (typeof value === 'string') return value;
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        const result = getMediaValue(item);
+        if (result) return result;
+      }
+      return null;
+    }
+    return value.url || value.link || value.href || value.thumbnail || value.content || null;
+  }
+
+  function pickFromSrcset(srcset) {
+    if (!srcset) return null;
+    const candidates = srcset.split(',').map(part => part.trim().split(/\s+/)[0]).filter(Boolean);
+    return candidates[candidates.length - 1] || null;
+  }
+
+  function normalizeImageUrl(url, baseUrl) {
+    if (!url) return null;
+    let clean = decodeHtml(String(url).trim());
+    if (!clean || clean.startsWith('data:') || clean.startsWith('blob:')) return null;
+    if (clean.startsWith('//')) clean = 'https:' + clean;
+
+    try {
+      clean = new URL(clean, baseUrl || window.location.href).href;
+    } catch {
+      return null;
+    }
+
+    const lower = clean.toLowerCase();
+    if (lower.includes('favicon') || lower.includes('spacer') || lower.includes('pixel') ||
+        lower.includes('transparent') || lower.includes('blank') || lower.includes('sprite') ||
+        lower.endsWith('.svg')) {
+      return null;
+    }
+
+    return clean;
+  }
+
+  function decodeHtml(value) {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = value;
+    return textarea.value;
+  }
+
+  function cleanText(value) {
+    const div = document.createElement('div');
+    div.innerHTML = value || '';
+    return (div.textContent || div.innerText || '').trim().replace(/\s+/g, ' ');
+  }
+
+  function isTinyImageElement(element) {
+    const width = parseInt(element.getAttribute('width') || element.getAttribute('data-width') || '0', 10);
+    const height = parseInt(element.getAttribute('height') || element.getAttribute('data-height') || '0', 10);
+    return (width > 0 && width < 80) || (height > 0 && height < 80);
+  }
+
+  async function fetchTextWithFallback(url, allowReader = false) {
+    const errors = [];
+    const builders = allowReader ? CORS_PROXIES.concat(READER_PROXY) : CORS_PROXIES;
+    for (const buildUrl of builders) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
+      try {
+        const res = await fetch(buildUrl(url), { signal: controller.signal });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const text = await res.text();
+        if (!text || /request is being verified|javascript is required/i.test(text)) {
+          throw new Error('Blocked response');
+        }
+        return text;
+      } catch (e) {
+        errors.push(e.message);
+      } finally {
+        clearTimeout(timeout);
+      }
+    }
+    throw new Error(errors.join(' | '));
+  }
+
+  async function fetchRss2JsonArticles(config) {
+    const res = await fetch(RSS2JSON + encodeURIComponent(config.url));
+    if (!res.ok) throw new Error('rss2json HTTP ' + res.status);
+
+    const data = await res.json();
+    if (data.status !== 'ok' || !Array.isArray(data.items)) throw new Error('Invalid rss2json response');
+
+    return data.items.map(item => {
+      const rawTitle = item.title || '';
+      const title = rawTitle.replace(/\s[-–—]\s[^-–—]+$/, '').trim() || rawTitle;
+      let source = item.author || config.name;
+      if (config.name.includes('Google News')) {
+        const match = rawTitle.match(/\s[-–—]\s(.+)$/);
+        if (match) source = match[1].trim();
+      }
+
+      const articleUrl = item.link || '#';
+      const image = extractImageFromItem(item, articleUrl);
+
+      return normalizeArticle({
+        title,
+        descriptionHtml: item.description || item.content || '',
+        source,
+        date: item.pubDate,
+        url: articleUrl,
+        image,
+        lang: config.lang,
+        feedType: config.type
+      });
+    }).filter(Boolean);
+  }
+
+  function nodeText(node, names) {
+    for (const name of names) {
+      const found = node.getElementsByTagName(name)[0];
+      if (found) return found.textContent || '';
+    }
+    return '';
+  }
+
+  function nodeAttr(node, names, attr) {
+    for (const name of names) {
+      const found = node.getElementsByTagName(name)[0];
+      if (found && found.getAttribute(attr)) return found.getAttribute(attr);
+    }
+    return '';
+  }
+
+  function parseXmlArticles(xmlText, config) {
+    const doc = new DOMParser().parseFromString(xmlText, 'text/xml');
+    if (doc.querySelector('parsererror')) throw new Error('Invalid XML');
+
+    const nodes = Array.from(doc.querySelectorAll('item, entry'));
+    if (!nodes.length) throw new Error('No feed items');
+
+    return nodes.map(node => {
+      const rawTitle = nodeText(node, ['title']).trim();
+      const title = rawTitle.replace(/\s[-–—]\s[^-–—]+$/, '').trim() || rawTitle;
+      const linkNode = node.getElementsByTagName('link')[0];
+      const link = normalizeArticleUrl(linkNode?.getAttribute('href') || nodeText(node, ['link', 'guid']).trim(), config.url);
+      const descriptionHtml = nodeText(node, ['description', 'summary', 'content', 'content:encoded']);
+      let source = nodeText(node, ['News:Source', 'source']).trim() || config.name;
+
+      if (config.name.includes('Google News') && rawTitle) {
+        const match = rawTitle.match(/\s[-–—]\s(.+)$/);
+        if (match) source = match[1].trim();
+      }
+
+      const image = extractImageFromItem({
+        image: nodeText(node, ['News:Image']),
+        content: descriptionHtml,
+        description: descriptionHtml,
+        thumbnail: nodeAttr(node, ['media:thumbnail'], 'url'),
+        enclosure: {
+          link: nodeAttr(node, ['media:content', 'enclosure'], 'url')
+        }
+      }, link);
+
+      return normalizeArticle({
+        title,
+        descriptionHtml,
+        source,
+        date: nodeText(node, ['pubDate', 'published', 'updated', 'dc:date']),
+        url: link,
+        image,
+        lang: config.lang,
+        feedType: config.type
+      });
+    }).filter(Boolean);
+  }
+
+  function parseHtmlArticles(htmlText, config) {
+    if (/Markdown Content:|##\s+\[[^\]]+\]\(https?:\/\//.test(htmlText)) {
+      return parseMarkdownArticles(htmlText, config);
+    }
+
+    const doc = new DOMParser().parseFromString(htmlText, 'text/html');
+    const anchors = Array.from(doc.querySelectorAll('article a[href], h1 a[href], h2 a[href], h3 a[href], h4 a[href], .news-card a[href], .card a[href], .item a[href], li a[href], a[href]'));
+    const articles = [];
+    const seen = new Set();
+
+    anchors.forEach(anchor => {
+      const url = normalizeArticleUrl(anchor.getAttribute('href'), config.url);
+      const container = anchor.closest('article, .news-card, .card, .item, li, .col-md-4, .col-md-6, .story, .post') || anchor.parentElement;
+      const heading = container?.querySelector('h1, h2, h3, h4') || anchor;
+      const title = cleanText(heading.textContent || anchor.textContent || '');
+
+      if (!isLikelyArticleUrl(url, title) || seen.has(url)) return;
+      seen.add(url);
+
+      const descNode = container?.querySelector('p');
+      const descText = descNode ? descNode.textContent : container?.textContent || '';
+      const timeNode = container?.querySelector('time[datetime], time');
+      const dateText = timeNode?.getAttribute('datetime') || timeNode?.textContent || extractDateText(container?.textContent || '');
+      const image = extractImageFromHtml(container?.outerHTML || anchor.outerHTML, url);
+
+      articles.push(normalizeArticle({
+        title,
+        descriptionHtml: descText,
+        source: config.name,
+        date: dateText,
+        url,
+        image,
+        lang: config.lang,
+        feedType: config.type
+      }));
+    });
+
+    return articles.filter(Boolean).slice(0, 18);
+  }
+
+  function parseMarkdownArticles(markdown, config) {
+    const articles = [];
+    const pattern = /(?:!\[[^\]]*\]\((https?:\/\/[^)]+)\)\s*)?(?:###\s*([^\n]+)\s*)?##\s*\[([^\]]+)\]\((https?:\/\/[^)]+)\)\s*([\s\S]*?)(?=\n!\[[^\]]*\]\(|\n###\s|\n##\s*\[|$)/g;
+    let match;
+
+    while ((match = pattern.exec(markdown)) !== null) {
+      const image = normalizeImageUrl(match[1], config.url);
+      const date = match[2] || '';
+      const title = match[3] || '';
+      const url = normalizeArticleUrl(match[4], config.url);
+      const description = (match[5] || '')
+        .replace(/!\[[^\]]*\]\([^)]+\)/g, '')
+        .replace(/\[[^\]]+\]\([^)]+\)/g, '')
+        .trim();
+
+      articles.push(normalizeArticle({
+        title,
+        descriptionHtml: description,
+        source: config.name,
+        date,
+        url,
+        image,
+        lang: config.lang,
+        feedType: config.type
+      }));
+    }
+
+    return articles.filter(Boolean).slice(0, 18);
+  }
+
+  function normalizeArticle(raw) {
+    const title = cleanText(raw.title || '');
+    if (title.length < 10) return null;
+
+    const description = cleanText(raw.descriptionHtml || '').replace(title, '').trim().slice(0, 500);
+    const date = formatDate(raw.date);
+
+    return {
+      id: 'art_' + hashText((raw.url || title) + date),
+      title,
+      description,
+      source: raw.source || 'مصدر إخباري',
+      sourceIcon: getIcon(raw.source || ''),
+      date,
+      url: raw.url || '#',
+      image: raw.image || '',
+      lang: raw.lang,
+      feedType: raw.feedType
+    };
+  }
+
+  function isLikelyArticleUrl(url, title) {
+    if (!url || !/^https?:\/\//i.test(url) || title.length < 12) return false;
+    const lower = url.toLowerCase();
+    if (lower.endsWith('/#') || lower.includes('/#') || /@|^\+?\d[\d\s-]+$/.test(title)) return false;
+    if (/facebook|twitter|instagram|youtube|linkedin|play\.google|apps\.apple|mailto:|javascript:/.test(lower)) return false;
+    if (/\/(category|tag|author|about|about-us|contact|privacy|terms|rss|login|subscribe|advertise)(\/|$)/i.test(lower)) return false;
+    if (/^\d+$/.test(title) || /^(oman|world|business|sports|opinion|technology|home)$/i.test(title)) return false;
+    return true;
+  }
+
+  function normalizeArticleUrl(url, baseUrl) {
+    try {
+      const parsed = new URL(url, baseUrl);
+      if (parsed.hostname.includes('bing.com') && parsed.pathname.includes('/news/apiclick')) {
+        const original = parsed.searchParams.get('url');
+        if (original) return decodeHtml(original);
+      }
+      return parsed.href;
+    } catch {
+      return '';
+    }
+  }
+
+  function extractDateText(text) {
+    const match = String(text || '').match(/(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)?\s*\d{1,2}\/[A-Za-z]+\/\d{4}(?:\s+\d{1,2}:\d{2}\s*(?:AM|PM)?)?/i);
+    return match ? match[0] : '';
+  }
+
+  function formatDate(dateValue) {
+    if (!dateValue) return '';
+
+    const normalized = String(dateValue)
+      .replace(/(\d{1,2})\/([A-Za-z]+)\/(\d{4})/, '$1 $2 $3')
+      .replace(/(\d{1,2}):(\d{2})\s*PM/i, (_, hour, minute) => Number(hour) > 12 ? hour + ':' + minute : hour + ':' + minute + ' PM')
+      .replace(/(\d{1,2}):(\d{2})\s*AM/i, '$1:$2 AM')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    const parsed = new Date(normalized);
+    if (Number.isNaN(parsed.getTime())) return '';
+    return parsed.toISOString().split('T')[0];
+  }
+
+  function sortNewestFirst(articles) {
+    return articles.slice().sort((a, b) => {
+      const aTime = Date.parse(a.date || '') || 0;
+      const bTime = Date.parse(b.date || '') || 0;
+      return bTime - aTime;
+    });
+  }
+
+  function hashText(text) {
+    let hash = 0;
+    for (let i = 0; i < text.length; i++) {
+      hash = ((hash << 5) - hash) + text.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(36);
+  }
+
+  async function fetchFeed(feedKey, config) {
+    const cached = OmanCache.get('feed_' + feedKey);
+    if (cached) return cached;
+
+    try {
+      let parsed = [];
+      try {
+        const text = await fetchTextWithFallback(config.url, config.format === 'html');
+        parsed = config.format === 'html'
+          ? parseHtmlArticles(text, config)
+          : parseXmlArticles(text, config);
+      } catch (e) {
+        if (config.format !== 'xml') throw e;
+        parsed = await fetchRss2JsonArticles(config);
+      }
+
+      const articles = await Promise.all(parsed.map(async article => {
+        if (!article.image) article.image = await fetchArticleImage(article.url);
+        return article;
+      }));
+
+      const filtered = articles.filter(a => isOmanRelated(a.title));
+      const sorted = sortNewestFirst(filtered);
+      OmanCache.set('feed_' + feedKey, sorted, 600000);
+      return sorted;
+    } catch (e) {
+      console.warn('[NewsEngine] ' + config.name + ':', e.message);
+      return [];
+    }
+  }
+
+  function getIcon(source) {
+    const s = source.toLowerCase();
+    if (s.includes('bbc')) return '🟣';
+    if (s.includes('cnn')) return '🔴';
+    if (s.includes('reuters') || s.includes('رويترز')) return '🔵';
+    if (s.includes('bloomberg') || s.includes('بلومبرغ')) return '🟡';
+    if (s.includes('jazeera') || s.includes('الجزيرة')) return '🟠';
+    if (s.includes('guardian')) return '🔴';
+    if (s.includes('france') || s.includes('فرانس')) return '🇫🇷';
+    if (s.includes('dw') || s.includes('دويتشه')) return '🇩🇪';
+    if (s.includes('sky') || s.includes('سكاي')) return '🔷';
+    if (s.includes('arabiya') || s.includes('العربية')) return '🟤';
+    if (s.includes('asharq') || s.includes('الشرق')) return '🟢';
+    if (s.includes('aawsat') || s.includes('الأوسط')) return '🟩';
+    if (s.includes('independent') || s.includes('إندبندنت')) return '🟥';
+    if (s.includes('euronews') || s.includes('يورونيوز')) return '🔹';
+    if (s.includes('aa.com') || s.includes('الأناضول') || s.includes('anadolu')) return '🔸';
+    if (s.includes('الشبيبة') || s.includes('جريدة') || s.includes('العمانية') || s.includes('عمان') || s.includes('oman')) return '🇴🇲';
+    return '📰';
+  }
+
+  async function fetchAllNews(forceRefresh) {
+    if (forceRefresh) OmanCache.clearAll();
+    if (!forceRefresh) { const c = OmanCache.get('all_news'); if (c) return c; }
+    const entries = Object.entries(RSS_FEEDS);
+    const results = await Promise.allSettled(entries.map(([k, c]) => fetchFeed(k, c)));
+    let all = []; let ok = 0, fail = 0;
+    results.forEach(r => { if (r.status === 'fulfilled' && r.value.length > 0) { all = all.concat(r.value); ok++; } else fail++; });
+    // Deduplicate
+    const seen = new Map();
+    all.forEach(a => { const key = (a.title || '').toLowerCase().replace(/\s+/g, '').slice(0, 50); if (!seen.has(key)) seen.set(key, a); });
+    all = sortNewestFirst(Array.from(seen.values()));
+    const { achievements, mentions } = classifyBatch(all);
+    const sortedAchievements = sortNewestFirst(achievements);
+    const sortedMentions = sortNewestFirst(mentions);
+    const result = { achievements: sortedAchievements, mentions: sortedMentions, stats: { totalArticles: sortedAchievements.length + sortedMentions.length, achievementCount: sortedAchievements.length, mentionCount: sortedMentions.length, sourcesCount: ok, failedSources: fail, lastUpdate: new Date().toISOString() } };
+    OmanCache.set('all_news', result, 600000);
+    OmanCache.setLastUpdate();
+    return result;
+  }
+
+  // ======================================================
+  // UI RENDERER
+  // ======================================================
+  function escHtml(t) { const d = document.createElement('div'); d.textContent = t || ''; return d.innerHTML; }
+
+  function relDate(ds) {
+    if (!ds) return 'تاريخ غير معروف';
+    try {
+      const d = new Date(ds), now = new Date(), h = Math.floor((now - d) / 3600000), days = Math.floor((now - d) / 86400000);
+      if (h < 1) return 'منذ أقل من ساعة';
+      if (h < 24) return 'منذ ' + h + ' ساعة';
+      if (days === 1) return 'أمس';
+      if (days < 7) return 'منذ ' + days + ' أيام';
+      return d.toLocaleDateString('ar-OM', { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch { return ds; }
+  }
+
+  function renderCards(articles, container) {
+    container.innerHTML = '';
+    if (!articles || articles.length === 0) {
+      container.innerHTML = '<div class="empty-state"><div class="empty-state__icon">📭</div><h3 class="empty-state__title">لا توجد أخبار حالياً</h3><p class="empty-state__desc">لم يتم العثور على أخبار. جرّب تحديث البيانات أو تغيير الفلاتر.</p></div>';
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    articles.forEach((a, i) => {
+      const card = document.createElement('article');
+      card.className = 'news-card';
+      card.style.animationDelay = Math.min(i * 0.06, 0.5) + 's';
+      const imageWrapClass = a.image ? 'news-card__image-wrap' : 'news-card__image-wrap news-card__image-wrap--empty';
+      const imageHtml = a.image
+        ? '<img class="news-card__image" src="' + escHtml(a.image) + '" alt="' + escHtml(a.title) + '" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest(\'.news-card__image-wrap\').classList.add(\'news-card__image-wrap--empty\');this.remove()" />'
+        : '<div class="news-card__image-placeholder">لا توجد صورة مرفقة بالخبر</div>';
+      card.innerHTML = '<div class="' + imageWrapClass + '">' + imageHtml + '<div class="news-card__image-overlay"></div><span class="news-card__source-badge">' + (a.sourceIcon || '📰') + ' ' + escHtml(a.source) + '</span></div><div class="news-card__body"><h3 class="news-card__title">' + escHtml(a.title) + '</h3><p class="news-card__desc">' + escHtml(a.description) + '</p><div class="news-card__meta"><span class="news-card__date">📅 ' + relDate(a.date) + '</span><a href="' + escHtml(a.url) + '" target="_blank" rel="noopener noreferrer" class="news-card__link">اقرأ المزيد ←</a></div></div>';
+      card.tabIndex = 0;
+      card.setAttribute('role', 'link');
+      card.setAttribute('aria-label', 'فتح الخبر: ' + (a.title || ''));
+      card.addEventListener('click', e => {
+        if (e.target.closest('a, button')) return;
+        window.open(a.url, '_blank', 'noopener,noreferrer');
+      });
+      card.addEventListener('keydown', e => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        window.open(a.url, '_blank', 'noopener,noreferrer');
+      });
+      frag.appendChild(card);
+    });
+    container.appendChild(frag);
+  }
+
+  function renderSkeletons(container, count) {
+    container.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const s = document.createElement('div');
+      s.className = 'skeleton-card';
+      s.innerHTML = '<div class="skeleton-image"></div><div class="skeleton-body"><div class="skeleton-line title"></div><div class="skeleton-line w-80"></div><div class="skeleton-line w-60"></div><div class="skeleton-line w-40"></div></div>';
+      container.appendChild(s);
+    }
+  }
+
+  function animNum(el, from, to) {
+    if (from === to) return;
+    const dur = 600, start = performance.now();
+    (function upd(now) {
+      const p = Math.min((now - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(from + (to - from) * e);
+      if (p < 1) requestAnimationFrame(upd);
+    })(start);
+  }
+
+  function showBanner(msg, type, dur) {
+    const ex = document.querySelector('.status-banner'); if (ex) ex.remove();
+    const b = document.createElement('div'); b.className = 'status-banner ' + (type || 'info');
+    const icons = { success: '✅', error: '⚠️', info: 'ℹ️' };
+    b.innerHTML = '<span>' + (icons[type] || 'ℹ️') + '</span><span>' + msg + '</span>';
+    const main = document.querySelector('.main');
+    if (main) main.insertBefore(b, main.firstChild);
+    if ((dur || 5000) > 0) setTimeout(() => { b.style.opacity = '0'; b.style.transform = 'translateY(-10px)'; setTimeout(() => b.remove(), 300); }, dur || 5000);
+  }
+
+  // ======================================================
+  // MAIN APP
+  // ======================================================
+  const state = {
+    activeTab: 'achievements',
+    activeFilter: 'all',
+    searchQuery: '',
+    achievements: [],
+    mentions: [],
+    isLoading: false,
+    displayedCount: 9,
+    stats: { totalArticles: 0, achievementCount: 0, mentionCount: 0, sourcesCount: 0 }
+  };
+
+  let newsGrid, refreshBtn;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    newsGrid = document.getElementById('news-grid');
+    refreshBtn = document.getElementById('refresh-btn');
+
+    // Theme init
+    const saved = localStorage.getItem('oman_theme');
+    const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    document.getElementById('theme-icon').textContent = theme === 'dark' ? '☀️' : '🌙';
+
+    // Events
+    document.getElementById('tab-achievements').addEventListener('click', () => switchTab('achievements'));
+    document.getElementById('tab-mentions').addEventListener('click', () => switchTab('mentions'));
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('settings-btn').addEventListener('click', () => { document.getElementById('settings-modal').classList.add('open'); document.body.style.overflow = 'hidden'; });
+    document.getElementById('settings-close').addEventListener('click', closeModal);
+    document.getElementById('settings-save-btn').addEventListener('click', closeModal);
+    document.getElementById('settings-modal').addEventListener('click', e => { if (e.target.id === 'settings-modal') closeModal(); });
+    refreshBtn.addEventListener('click', () => loadNews(true));
+    document.getElementById('clear-cache-btn').addEventListener('click', () => { OmanCache.clearAll(); showBanner('تم مسح البيانات المخزنة بنجاح', 'success'); });
+    document.getElementById('load-more-btn').addEventListener('click', () => { state.displayedCount += 6; renderView(); });
+    
+    let st; document.getElementById('search-input').addEventListener('input', e => { clearTimeout(st); st = setTimeout(() => { state.searchQuery = e.target.value.trim(); renderView(); }, 300); });
+
+    document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.activeFilter = btn.dataset.filter;
+        renderView();
+      });
+    });
+
+    window.addEventListener('scroll', () => { document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 10); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    loadNews(true);
+  });
+
+  function closeModal() {
+    document.getElementById('settings-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleTheme() {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    document.getElementById('theme-icon').textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('oman_theme', next);
+    const mt = document.querySelector('meta[name="theme-color"]');
+    if (mt) mt.content = next === 'dark' ? '#0B0E14' : '#C8102E';
+  }
+
+  function switchTab(tab) {
+    state.activeTab = tab;
+    state.displayedCount = 9;
+    document.getElementById('tab-achievements').classList.toggle('active', tab === 'achievements');
+    document.getElementById('tab-mentions').classList.toggle('active', tab === 'mentions');
+    newsGrid.style.opacity = '0'; newsGrid.style.transform = 'translateY(10px)';
+    setTimeout(() => { renderView(); newsGrid.style.opacity = '1'; newsGrid.style.transform = 'translateY(0)'; }, 200);
+  }
+
+  async function loadNews(force) {
+    if (state.isLoading) return;
+    state.isLoading = true;
+    refreshBtn.classList.add('loading');
+    renderSkeletons(newsGrid, 6);
+
+    try {
+      const result = await fetchAllNews(force);
+      if (result.achievements.length > 0 || result.mentions.length > 0) {
+        state.achievements = result.achievements;
+        state.mentions = result.mentions;
+        state.stats = result.stats;
+        showBanner('تم تحميل ' + result.stats.totalArticles + ' خبر من ' + result.stats.sourcesCount + ' مصادر', 'success');
+      } else {
+        state.achievements = [];
+        state.mentions = [];
+        state.stats = result.stats || { totalArticles: 0, achievementCount: 0, mentionCount: 0, sourcesCount: 0 };
+        showBanner('لم يتم العثور على أخبار حية الآن. جرّب التحديث بعد قليل.', 'info', 8000);
+      }
+    } catch (e) {
+      console.error('[App]', e);
+      state.achievements = [];
+      state.mentions = [];
+      state.stats = { totalArticles: 0, achievementCount: 0, mentionCount: 0, sourcesCount: 0 };
+      showBanner('تعذر الاتصال بمصادر الأخبار الحية. لم يتم عرض بيانات تجريبية.', 'error', 8000);
+    }
+
+    state.isLoading = false;
+    refreshBtn.classList.remove('loading');
+
+    // Update stats
+    const totalEl = document.getElementById('stat-total');
+    const srcEl = document.getElementById('stat-sources');
+    const updEl = document.getElementById('stat-update');
+    animNum(totalEl, parseInt(totalEl.textContent) || 0, state.stats.totalArticles);
+    animNum(srcEl, parseInt(srcEl.textContent) || 0, state.stats.sourcesCount);
+    updEl.textContent = new Date().toLocaleTimeString('ar-OM', { hour: '2-digit', minute: '2-digit' });
+
+    document.getElementById('tab-achievements-count').textContent = state.achievements.length;
+    document.getElementById('tab-mentions-count').textContent = state.mentions.length;
+
+    state.displayedCount = 9;
+    renderView();
+  }
+
+  function renderView() {
+    let articles = state.activeTab === 'achievements' ? state.achievements : state.mentions;
+    articles = articles.filter(isArticleRelevantForActiveTab);
+    articles = sortNewestFirst(articles);
+    if (state.searchQuery) {
+      const q = state.searchQuery.toLowerCase();
+      articles = articles.filter(a => ((a.title || '') + (a.description || '') + (a.source || '')).toLowerCase().includes(q));
+    }
+    if (state.activeFilter === 'local') {
+      articles = articles.filter(a => { const s = (a.source || '').toLowerCase(); return s.includes('عمان') || s.includes('oman') || s.includes('muscat') || a.feedType === 'oman'; });
+    } else if (state.activeFilter === 'global') {
+      articles = articles.filter(a => { const s = (a.source || '').toLowerCase(); return s.includes('reuters') || s.includes('bbc') || s.includes('cnn') || s.includes('bloomberg') || s.includes('guardian') || s.includes('الجزيرة') || s.includes('العربية') || s.includes('france') || s.includes('asharq') || s.includes('الشرق') || s.includes('aawsat') || s.includes('الأوسط') || s.includes('independent') || s.includes('إندبندنت') || s.includes('euronews') || s.includes('يورونيوز') || s.includes('anadolu') || s.includes('الأناضول') || a.feedType === 'global'; });
+    }
+    const toShow = articles.slice(0, state.displayedCount);
+    renderCards(toShow, newsGrid);
+    document.getElementById('load-more-wrap').style.display = articles.length > state.displayedCount ? 'flex' : 'none';
+  }
+
+  function isArticleRelevantForActiveTab(article) {
+    const title = article.title || '';
+    return isOmanRelated(title);
+  }
+  </script>
+
+</body>
+</html>
